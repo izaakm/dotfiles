@@ -1,0 +1,17 @@
+" Settings are in ~/.vim/pack/mine/start/gist-minimal/plugin/init.vim
+" Plugins:
+" - https://github.com/tpope/vim-sensible
+" - https://gist.github.com/izaakm/f1f482f6012f832a97ec6007e9ac56f5
+" .vim
+" └── pack
+"     ├── mine
+"     │   └── start
+"     │       └── gist-minimal
+"     │           └── plugin
+"     │               └── init.vim
+"     └── tpope
+"         └── start
+"             └── sensible
+"                 ├── plugin
+"                 │   └── sensible.vim
+"                 └── README.markdown

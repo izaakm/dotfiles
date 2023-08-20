@@ -1,0 +1,53 @@
+# echo "[DEBUG] ~/.zshrc says SHELL=$SHELL"
+
+# Created by newuser for 5.5.1
+HISTFILE=~/.histfile
+HISTSIZE=100000
+SAVEHIST=1000000
+setopt beep
+setopt nomatch
+setopt notify
+setopt inc_append_history
+
+unsetopt autocd
+unsetopt extendedglob
+
+bindkey -e
+
+zstyle :compinstall filename '/nfs/home/jmill165/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# User specific aliases and functions
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
+
+if [ -f ~/.zsh_aliases ]; then
+	. ~/.zsh_aliases
+fi
+
+
+# Show me if I have tmux sessions active
+# echo "tmux: $(tmux ls)"
+
+setopt SH_WORD_SPLIT
+
+# Use directory stack
+export DIRSTACKSIZE=9
+setopt autopushd
+setopt pushdminus
+setopt pushdsilent
+setopt pushdtohome
+
+export MY_JOBS=/lustre/isaac/scratch/jmill165/jobs
+
+# END
