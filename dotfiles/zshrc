@@ -1,5 +1,8 @@
 # echo "[DEBUG] ~/.zshrc says SHELL=$SHELL"
 
+# Enable ls colors on macos
+export CLICOLOR=1
+
 # Created by newuser for 5.5.1
 HISTFILE=~/.histfile
 HISTSIZE=100000
