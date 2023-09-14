@@ -59,4 +59,7 @@ setopt pushdtohome
 
 export MY_JOBS=/lustre/isaac/scratch/jmill165/jobs
 
+# https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
+export PROMPT="[%n@%m] %1~ %# "
+
 # END

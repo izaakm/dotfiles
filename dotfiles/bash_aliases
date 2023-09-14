@@ -16,7 +16,9 @@ fi
 # some more ls aliases
 # alias la='ls -A'
 # alias l='ls -CF'
-alias ll='ls -lF'
+alias l='ls -lF'
+alias ll='ls -lF --color=always | less -SXFR'  # macos
+# alias ll='ls -lF | less -SXFR'  # linux
 alias la='ls -alF'
 
 alias gc="git commit --verbose"
