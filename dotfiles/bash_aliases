@@ -21,7 +21,7 @@ function _list_less() {
     local args=("$@")
     ls "${args[@]}" | less -SXFR
 }
-alias ls='_list_less'
+# alias ls='_list_less'
 alias ll='_list_less -lF --color=always'
 alias la='_list_less -alF --color=always'
 
@@ -38,3 +38,4 @@ function _cake() {
 }
 
 alias cake=_cake
+alias sq="squeue --me"
