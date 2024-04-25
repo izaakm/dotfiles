@@ -1,4 +1,9 @@
 [init]
 	defaultBranch = main
 [credential]
-	helper = cache --timeout=10800
+	helper = cache --timeout=28800
+[user]
+	name = izaakm
+	email = izaakm@users.noreply.github.com
+[pull]
+	rebase = true
