@@ -1,4 +1,5 @@
 # echo "[DEBUG] ~/.zshrc says SHELL=$SHELL"
+#
 
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
@@ -62,4 +63,6 @@ export MY_JOBS=/lustre/isaac/scratch/jmill165/jobs
 # https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
 export PROMPT="[%n@%m] %1~ %# "
 
+# Aliases
+alias hist="history 0 | less"
 # END
