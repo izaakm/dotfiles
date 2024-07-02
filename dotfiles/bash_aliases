@@ -39,3 +39,4 @@ function _cake() {
 
 alias cake=_cake
 alias sq="squeue --me"
+alias lsjobs='find $SCRATCHDIR/jobs -type f | xargs ls -lgGtr'
