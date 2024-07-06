@@ -19,7 +19,7 @@ fi
 # some more ls aliases
 function _list_less() {
     local args=("$@")
-    ls "${args[@]}" | less -SXFR
+    \ls "${args[@]}" | less -SXFR
 }
 # alias ls='_list_less'
 alias ll='_list_less -lF --color=always'
