@@ -10,7 +10,7 @@ run() {
 	if [[ $dry_run == true ]] ; then
 		echo "[DRYRUN] ${command[@]}"
 	else
-		"${command[@]}"
+		eval "${command[@]}"
 	fi
 }
 
