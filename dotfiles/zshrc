@@ -10,6 +10,16 @@ export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$UID}"
 # Enable ls colors on macos
 export CLICOLOR=1
 
+export MY_JOBS=/lustre/isaac/scratch/jmill165/jobs
+
+# https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
+export PROMPT="[%n@%m] %1~ %# "
+
+if command -v nvim &> /dev/null ; then
+    echo "found nvim"
+    alias vi=nvim
+fi
+
 # Created by newuser for 5.5.1
 HISTFILE=~/.histfile
 HISTSIZE=100000
@@ -26,8 +36,20 @@ bindkey -e
 
 zstyle :compinstall filename '/nfs/home/jmill165/.zshrc'
 
+# Tab Completion
+# Every style defined here should be called after autoloading and calling compinit. 
+# https://thevaluable.dev/zsh-completion-guide-examples/
 autoload -Uz compinit
 compinit
+
+# Case insensitive autocomplete.
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# https://zsh.sourceforge.io/Doc/Release/Options.html#Completion-4
+# On an ambiguous completion, instead of listing possibilities or beeping, insert the first match immediately. 
+setopt menu_complete
+
+unsetopt list_rows_first
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
@@ -58,10 +80,6 @@ setopt pushdminus
 setopt pushdsilent
 setopt pushdtohome
 
-export MY_JOBS=/lustre/isaac/scratch/jmill165/jobs
-
-# https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
-export PROMPT="[%n@%m] %1~ %# "
 
 # Aliases
 alias hist="history 0 | less"
